@@ -1,12 +1,21 @@
 
 
 function NavBar(props) {
+    const { pokemonList, currentIndex, changePokemon } = props;
+  
     return (
-        <div className="navbar">
-            <button onClick={props.previous}>Précédent</button>
-            <button onClick={props.next}>Suivant</button>
-        </div>
+      <div className="navbar">
+        {pokemonList.map((pokemon, index) => (
+          <button
+            key={index}
+            onClick={() => changePokemon(index)}
+            className={currentIndex === index ? 'active' : ''}
+          >
+            {pokemon.name}
+          </button>
+        ))}
+      </div>
     );
-}
+  }
 
 export default NavBar;

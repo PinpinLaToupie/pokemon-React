@@ -32,7 +32,11 @@ function App() {
     },
   ];
 
-  const selectedPokemon = pokemonList[pokemonIndex];
+  const changePokemon = (index) => {
+    setPokemonIndex(index);
+  };
+
+  /* const selectedPokemon = pokemonList[pokemonIndex];
 
   const previous = () => {
     if (pokemonIndex > 0) {
@@ -44,15 +48,15 @@ function App() {
     if (pokemonIndex < pokemonList.length - 1) {
       setPokemonIndex(pokemonIndex + 1);
     }
-  };
+  }; */
 
   return (
     <div className="App">
-      <PokemonCard pokemon={selectedPokemon} />
+      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
       <NavBar
-        previous={previous}
-        next={next}
-        pokemonIndex={pokemonIndex}
+       pokemonList={pokemonList}
+       currentIndex={pokemonIndex}
+       changePokemon={changePokemon}
       />
     </div>
   );
