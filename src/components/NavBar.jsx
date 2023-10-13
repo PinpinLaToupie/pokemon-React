@@ -1,5 +1,3 @@
-
-
 function NavBar(props) {
     const { pokemonList, currentIndex, changePokemon } = props;
   

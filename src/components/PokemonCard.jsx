@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types';
 
-function PokemonCard(props) {
-    console.log(props);
-
-    const { pokemon } = props;
+function PokemonCard({ pokemon }) {
 
     return (
         <figure>
@@ -11,7 +8,6 @@ function PokemonCard(props) {
                 <img
                     src={pokemon.imgSrc}
                     alt={pokemon.name} /> : <p>???</p>}
-
             <figcaption>{pokemon.name}</figcaption>
         </figure>
     );
